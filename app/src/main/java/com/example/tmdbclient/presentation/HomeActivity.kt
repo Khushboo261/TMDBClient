@@ -4,9 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
+import com.example.tmdbclient.presentation.artist.ArtistsActivity
 import com.example.tmdbclient.R
 import com.example.tmdbclient.databinding.ActivityHomeBinding
-import com.example.tmdbclient.presentation.artist.ArtistActivity
 import com.example.tmdbclient.presentation.movie.MovieActivity
 import com.example.tmdbclient.presentation.tv.TvShowActivity
 
@@ -27,7 +27,7 @@ class HomeActivity : AppCompatActivity() {
         }
 
         binding.artistsButton.setOnClickListener {
-            val intent = Intent(this, ArtistActivity::class.java)
+            val intent = Intent(this, ArtistsActivity::class.java)
             startActivity(intent)
         }
     }

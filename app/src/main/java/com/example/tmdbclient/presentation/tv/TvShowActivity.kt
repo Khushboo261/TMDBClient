@@ -39,10 +39,10 @@ class TvShowActivity : AppCompatActivity() {
         binding.tvshowRecyclerView.layoutManager = LinearLayoutManager(this)
         adapter = TvShowAdapter()
         binding.tvshowRecyclerView.adapter = adapter
-        diaplayPopularTvShows()
+        displayPopularTvShows()
     }
 
-    private fun diaplayPopularTvShows(){
+    private fun displayPopularTvShows(){
         binding.tvshowProgressBar.visibility = View.VISIBLE
         val responseLiveData = tvShowViewModel.getTvShows()
         responseLiveData.observe(this, Observer {
@@ -66,14 +66,14 @@ class TvShowActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when(item.itemId){
             R.id.action_update -> {
-                updateMovies()
+                updateTvShows()
                 true
             }
             else -> super.onOptionsItemSelected(item)
         }
     }
 
-    private fun updateMovies(){
+    private fun updateTvShows(){
         binding.tvshowProgressBar.visibility = View.VISIBLE
         val response = tvShowViewModel.updateTvShows()
         response.observe(this, Observer {

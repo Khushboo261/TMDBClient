@@ -20,7 +20,7 @@ class MovieViewModel(
         emit(movieList)
     }
 
-    }
+}
 
 
 
